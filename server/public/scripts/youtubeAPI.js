@@ -15,9 +15,10 @@ $(function() {
        // execute the request
        request.execute(function(response) {
           var results = response.result;
+          console.log(response.result);
           $("#results").html("");
           $.each(results.items, function(index, item) {
-            $.get("/views/index.html", function(data) {
+            $.get("/views/item.html", function(data) {
                 $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
             });
           });
