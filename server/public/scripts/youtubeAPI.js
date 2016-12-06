@@ -18,7 +18,7 @@ $(function() {
           console.log(response.result);
           $("#results").html("");
           $.each(results.items, function(index, item) {
-            $.get("/views/item.html", function(data) {
+            $.get("./views/item.html", function(data) {
                 $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
             });
           });
