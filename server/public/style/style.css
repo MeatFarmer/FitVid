@@ -1,0 +1,12 @@
+.dropdown-menu {
+    left: 50% !important;
+    margin-left: -70px;
+}
+img {
+  height: 400px;
+  width: 400px;
+}
+
+ul li {
+  font-weight: bold;
+}

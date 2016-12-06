@@ -1,0 +1,18 @@
+<body ng-app="animalAPI" ng-controller="fishController">
+
+    <div class='container-fluid'>
+        <div class='row'>
+            <div class='col-md-6 text-center'>
+                <h1>{{fish.animal.name.$t}} </h1>
+                <img ng-src="{{fish.animal.media.photos.photo[2].$t}}" />
+            </div>
+            <div class='col-md-6'>
+              <h1> Description </h1>
+              <br />
+                <p> {{fish.animal.description.$t}} </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
