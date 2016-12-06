@@ -3,22 +3,27 @@ var animalAPI = angular.module('animalAPI', ['ngRoute']);
 animalAPI.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
-        .when('/cat', {
-            templateUrl: '/views/templates/cat.html',
-            controller: 'catController',
-            controllerAs: 'cat'
+        .when('/picker', {
+            templateUrl: '/views/templates/picker.html',
+            controller: 'pickerController',
+            controllerAs: 'picker'
         })
-        .when('/dog', {
-            templateUrl: '/views/templates/dog.html',
-            controller: 'dogController',
-            controllerAs: 'dog'
+        .when('/logIn', {
+            templateUrl: '/views/templates/logIn.html',
+            controller: 'logInController',
+            controllerAs: 'logIn'
         })
-        .when('/fish', {
-            templateUrl: '/views/templates/fish.html',
-            controller: 'fishController',
-            controllerAs: 'fish'
+        .when('/options', {
+            templateUrl: '/views/templates/options.html',
+            controller: 'optionsController',
+            controllerAs: 'options'
+        })
+        .when('/youtubeResults', {
+            templateUrl: '/views/templates/youtubeResults.html',
+            controller: 'resultsController',
+            controllerAs: 'results'
         })
         .otherwise({
-            redirectTo: '/dog'
+            redirectTo: '/logIn'
         });
 }]);
