@@ -40,7 +40,19 @@ ul li {
  top: 50%;
 }
 
-.w100 { width: 100%; }
+.w100 {
+  width: 100%;
+}
+
+.w50[seamless] {
+  width: 50%;
+  display: block;
+  margin: 0;
+}
+
+iframe[seamless] {
+    display: block;
+}
 
 .btn-primary {
   background: #952b2b;

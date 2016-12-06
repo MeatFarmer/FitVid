@@ -24,33 +24,16 @@
 
 </head>
 
-<!-- <body ng-app="animalAPI"> -->
+<body ng-app="youtubeAPI">
 
-<body>
     <header class="jumbotron text-center">
         <h1 class="container">VidFit</h1>
     </header>
-    <!-- <div ng-include="'/views/templates/nav.html'"> </div> -->
+    <div ng-include="'/views/templates/nav.html'"> </div>
 
     <main ng-view>
 
     </main>
-
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <form action="#">
-                <p><input type="text" id="search" placeholder="Type something..." autocomplete="off" class="form-control" /></p>
-                <p><input type="submit" value="Search" class="form-control btn btn-primary w100"></p>
-            </form>
-            <div id="results"></div>
-        </div>
-    </div>
-    <div class="item">
-        <h2></h2>
-        <iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/{{videoid}}" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-
 
 </body>
 
