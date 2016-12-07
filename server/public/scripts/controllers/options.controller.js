@@ -5,18 +5,18 @@ youtubeAPI.controller('optionsController', ['dataFactory', function(dataFactory)
 
   var self = this;
 
-  self.newOption = [];
-  self.newOption.time = "";
+  self.newOption = {};
+  self.newOption.workout = "";
   self.newOption.type = "";
 
 
   console.log();
 
   self.addOption = function() {
-    console.log('adding option:' + self.newOption.time + ' ' + self.newOption.type);
+    console.log('adding option:' + self.newOption.workout + ' ' + self.newOption.type);
     // dataFactory.options.push(self.newOption);
     dataFactory.addOption(self.newOption);
-    console.log(dataFactory.currentOptions());
+    console.log('factory', dataFactory.currentOptions());
 
   }
 

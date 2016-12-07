@@ -1,7 +1,7 @@
 
 <div class="text-center">
   <div class="container ">
-    <select name="option1" ng-model="options.newOption.type">
+    <select name="option1" ng-model="options.newOption.workout">
       <option value="CrossFit">CrossFit</option>
       <option value="Zumba">Zumba</option>
       <option value="More">More</option>
@@ -13,7 +13,7 @@
 
     <div class="text-center">
       <div class="container ">
-        <select name="option2" ng-model="options.newOption.time">
+        <select name="option2" ng-model="options.newOption.type">
           <option value="CrossFit">CrossFit</option>
           <option value="Zumba">Zumba</option>
           <option value="More">More</option>
@@ -21,6 +21,7 @@
           <option value="option-1">Option 1</option>
           <option value="option-2">Option 2</option>
         </select>
+        <br />
         <button class="btn btn-primary" ng-click="options.addOption()">Add</button>
 
 </div>
