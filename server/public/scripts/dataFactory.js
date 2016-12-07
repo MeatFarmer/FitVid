@@ -1,28 +1,29 @@
-
 youtubeAPI.factory('dataFactory', [function() {
-  console.log("data factory running");
+    console.log("data factory running");
 
-  var options = ["crossfit", "yoga"];
-  console.log(options);
+    var options = [];
+    console.log(options);
 
 
-  function addOption(newOption) {
-      options.push(newOption);
-      console.log(newOption);
-}
+    function addOption(newOption) {
+        options.push(newOption);
 
-  function optionList(newOption) {
-    addOption(newOption);
-  }
-  // public
 
-var publicApi = {
-  currentOptions: options,
-  addOption: optionList
-};
-  return publicApi;
+    }
+
+    function optionList() {
+        return options;
+
+    }
+    // public
+
+    var publicApi = {
+        currentOptions: optionList,
+        addOption: addOption
+    };
+    return publicApi;
 }]);
-  
+
 
 
 
