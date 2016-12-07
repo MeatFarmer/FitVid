@@ -2,7 +2,7 @@ youtubeAPI.factory('dataFactory', [function() {
     console.log("data factory running");
 
     var options = [];
-    console.log(options);
+    console.log('factory', options);
 
 
     function addOption(newOption) {
