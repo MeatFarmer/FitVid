@@ -2,7 +2,12 @@ youtubeAPI.controller('resultsController', ['$http', function($http) {
     console.log('resultsController up and running');
     var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
     var self = this;
+
+    var arrayOfVideos  = {};
+    var vidId = [];
     self.video = {};
+    self.title = '';
+    self.videoid = '';
 
     self.getVideo = function() {
         var query = 'https://www.googleapis.com/youtube/v3/search';
@@ -15,9 +20,19 @@ youtubeAPI.controller('resultsController', ['$http', function($http) {
         console.log('Request:', request);
 
         $http.jsonp(request).then(function(response) {
-            console.log(response);
+            // console.log('response is: ', response);
             self.video = response;
-            console.log(self.video);
+            arrayOfVideos = self.video.data.items;
+
+            arrayOfVideos.forEach(function(vid) {
+              // console.log('indivual vid:' ,vid);
+              vidId.push(vid.id.videoId);
+
+              });
+
+            // console.log('self.video.data.items', self.video.data.items);
+
+            console.log(vidId);
         });
 
     }
