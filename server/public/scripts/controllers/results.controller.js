@@ -1,47 +1,84 @@
 youtubeAPI.controller('resultsController', ['$http', function($http) {
     console.log('resultsController up and running');
+    var self = this;
+    self.videos = {};
 
-//     function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+    self.getYoutubeVids = function () {
+    var request = gapi.client.youtube.search.list({
+         part: "snippet",
+         type: "video",
+         q: "CrossFit Leg Workout Video",
+        //  q: encodeURIComponent($("#search").val()),
+         maxResults: 3,
+         order: "viewCount",
+         publishedAfter: "2015-01-01T00:00:00Z"
+
+       })
+     };
+
+
+        console.log('Request:', request);
+
+        $http.jsonp(request).then(function(response) {
+            console.log(response);
+            var results = response.result;
+            self.title = response.item.snippet.title;
+            self.videoid = response.item.id.videoId;
+            console.log('self.title');
+        });
+
+    }
+
+
+    function init() {
+        gapi.client.setApiKey("AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4");
+        gapi.client.load("youtube", "v3", function() {
+            // yt api is ready
+        });
+
+        self.getYoutubeVids();
+
+}]);
+
 //
-//     $(function() {
-//         $("form").on("submit", function(e) {
-//            e.preventDefault();
-//            // prepare the request
-//            var request = gapi.client.youtube.search.list({
-//                 part: "snippet",
-//                 type: "video",
-//                 q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-//                 maxResults: 3,
-//                 order: "viewCount",
-//                 publishedAfter: "2015-01-01T00:00:00Z"
-//            });
-//            // execute the request
-//            request.execute(function(response) {
-//               var results = response.result;
-//               console.log(response.result);
-//               $("#results").html("");
-//               $.each(results.items, function(index, item) {
-//                 $.get("./views/item.html", function(data) {
-//                     $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
-//                 });
-//               });
-//               resetVideoHeight();
-//            });
-//         });
+// $(function() {
+//     $("form").on("submit", function(e) {
+//        e.preventDefault();
+//        // prepare the request
 //
-//         $(window).on("resize", resetVideoHeight);
+//        var request = gapi.client.youtube.search.list({
+//             part: "snippet",
+//             type: "video",
+//             q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
+//             maxResults: 3,
+//             order: "viewCount",
+//             publishedAfter: "2015-01-01T00:00:00Z"
+//        });
+//
+//        // execute the request
+//        request.execute(function(response) {
+//           var results = response.result;
+//           console.log(results);
+//           $("#results").html("");
+//           $.each(results.items, function(index, item) {
+//             $.get("./views/item.html", function(data) {
+//                 $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+//             });
+//           });
+//           resetVideoHeight();
+//        });
 //     });
 //
-//     function resetVideoHeight() {
-//         $(".video").css("height", $("#results").width() * 9/16);
-//     }
+//     $(window).on("resize", resetVideoHeight);
+// });
 //
-//     function init() {
-//         gapi.client.setApiKey("AIzaSyDJ0uRZ37WBXCi7UrMPsgn3uuzO5VZuNzU");
-//         gapi.client.load("youtube", "v3", function() {
-//             // yt api is ready
-//         });
-//     }
+// function resetVideoHeight() {
+//     $(".video").css("height", $("#results").width() * 9/16);
+// }
 //
-    self.message = "Welcome!"
-}]);
+// function init() {
+//     gapi.client.setApiKey("AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4");
+//     gapi.client.load("youtube", "v3", function() {
+//         // yt api is ready
+//     });
+// }

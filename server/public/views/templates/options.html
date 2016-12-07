@@ -1,23 +1,45 @@
 
+<div ng-controller="optionsController">
+      <label> Enter a search </label>
+      <input type="text" ng-model="options.newOption" />
+      <button class="btn btn-primary" ng-click="options.addOption()">Add</button>
+
+</div>
+
+
+<!-- <div ng-controller="optionsController">
+
+
+
 <div class="text-center">
   <div class="container ">
-    <select>
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </select>
+    <select name="option1" ng-model="options.option1">
+      <option value="CrossFit">CrossFit</option>
+      <option value="Zumba">Zumba</option>
+      <option value="More">More</option>
+      <option value="option-2">Option 2</option>
+      <option value="option-1">Option 1</option>
+      <option value="option-2">Option 2</option>
+    </select>
   </div>
+
+  {{option1}}
 
 
   <div class="text-center">
     <div class="container ">
-      <select>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-    </select>
+      <select name="singleSelect" ng-model="data.option2">
+        <option value="Legs">Legs</option>
+        <option value="Core">Core</option>
+        <option value="Upper Body">Upper Body</option>
+        <option value="option-2"></option>
+        <option value="option-1">Option 1</option>
+        <option value="option-2">Option 2</option>
+      </select>
     </div>
 
 <button><a href="#picker">Next Page</a></button>
+
+</div>
+
+</div> -->
