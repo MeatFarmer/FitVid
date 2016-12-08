@@ -25,6 +25,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
         var query = 'https://www.googleapis.com/youtube/v3/search';
         query += '?part=snippet';
         query += '&q=' + ' ' + type + ' ' + workout;
+        query += '&maxResults=15';
         query += '&key=' + key;
 
         var request = encodeURI(query) + '&callback=JSON_CALLBACK';
