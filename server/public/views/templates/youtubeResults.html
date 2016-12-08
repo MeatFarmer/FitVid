@@ -1,11 +1,5 @@
-
-
-
 <div>
-      <!-- {{results}} -->
     <div ng-repeat="vid in results.vidId">
-      <!-- {{vid}} -->
-
-    <iframe class="video w50" width="640" height="360" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
-  </div>
+        <iframe class="video w50" width="640" height="360" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
+    </div>
 </div>

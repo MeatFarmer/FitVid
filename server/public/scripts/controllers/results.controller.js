@@ -1,10 +1,7 @@
-youtubeAPI.controller('resultsController', ['$http', function($http) {
+youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($http, dataFactory) {
     console.log('resultsController up and running');
 
-  //   $sceDelegateProvider.resourceUrlWhitelist([
-  //  'self',
-  //  'https://www.youtube.com/**']);
-
+    var options= [];
 
     var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
     var self = this;
@@ -35,6 +32,8 @@ youtubeAPI.controller('resultsController', ['$http', function($http) {
               self.vidId.push(vid.id.videoId);
 
               });
+
+              console.log('Info I need', dataFactory.currentOptions());
 
             // console.log('self.video.data.items', self.video.data.items);
 
