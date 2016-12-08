@@ -2,7 +2,8 @@ youtubeAPI.factory('dataFactory', [function() {
     console.log("data factory running");
 
     var options = [];
-    // console.log('dataFactory', options);
+    var string = {};
+    console.log('dataFactory', options);
 
     function addOption(newOption) {
         options.push(newOption);
@@ -12,11 +13,16 @@ youtubeAPI.factory('dataFactory', [function() {
         return options;
     }
 
+    function stringVar (string) {
+        return string;
+    }
+
     var publicApi = {
         currentOptions: optionList,
-        addOption: addOption
+        addOption: addOption,
+        stringVar: stringVar
     };
     return publicApi;
-    console.log('dataFactory', options);
+    // console.log('dataFactory', options);
 
 }]);

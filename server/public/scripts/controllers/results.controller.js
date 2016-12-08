@@ -1,11 +1,12 @@
 youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($http, dataFactory) {
     console.log('resultsController up and running');
 
-    var options= [];
+    var options= {};
 
     var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
     var self = this;
 
+    var search = "";
     var arrayOfVideos  = {};
     self.vidId = [];
     self.video = {};
@@ -20,8 +21,6 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
 
         var request = encodeURI(query) + '&callback=JSON_CALLBACK';
 
-        console.log('Request:', request);
-
         $http.jsonp(request).then(function(response) {
             // console.log('response is: ', response);
             self.video = response;
@@ -32,12 +31,14 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
               self.vidId.push(vid.id.videoId);
 
               });
-
-              console.log('Info I need', dataFactory.currentOptions());
+              search = dataFactory.stringVar();
+              console.log("Info I need ", dataFactory.currentOptions());
+              var searchResults = dataFactory.currentOptions();
+              console.log(searchResults[0].type);
 
             // console.log('self.video.data.items', self.video.data.items);
 
-            console.log('vidId :', self.vidId);
+            // console.log('vidId :', self.vidId);
         });
 
     }
