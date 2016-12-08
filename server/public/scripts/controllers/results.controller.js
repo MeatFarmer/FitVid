@@ -6,17 +6,30 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
     var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
     var self = this;
 
+
+
     var search = "";
+    var type = "";
+    var workout = "";
+
+
+    var searchResults = dataFactory.currentOptions();
+    type = searchResults[0].type;
+    workout = searchResults[0].workout + ' workout';
+    console.log('concat' + ' ' + type + ' ' + workout);
+
+
     var arrayOfVideos  = {};
     self.vidId = [];
     self.video = {};
     self.title = '';
     self.videoid = '';
+    console.log(type);
 
     self.getVideo = function() {
         var query = 'https://www.googleapis.com/youtube/v3/search';
         query += '?part=snippet';
-        query += '&q=cats';
+        query += '&q=' + ' ' + type + ' ' + workout;
         query += '&key=' + key;
 
         var request = encodeURI(query) + '&callback=JSON_CALLBACK';
@@ -33,12 +46,10 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
               });
               search = dataFactory.stringVar();
               console.log("Info I need ", dataFactory.currentOptions());
-              var searchResults = dataFactory.currentOptions();
-              console.log(searchResults[0].type);
+              // var searchResults = dataFactory.currentOptions();
+              // type = searchResults[0].type;
+              // console.log('type: ', type);
 
-            // console.log('self.video.data.items', self.video.data.items);
-
-            // console.log('vidId :', self.vidId);
         });
 
     }
