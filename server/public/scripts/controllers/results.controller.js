@@ -31,14 +31,10 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
         var request = encodeURI(query) + '&callback=JSON_CALLBACK';
 
         $http.jsonp(request).then(function(response) {
-            // console.log('response is: ', response);
             self.video = response;
             arrayOfVideos = self.video.data.items;
-
             arrayOfVideos.forEach(function(vid) {
-              // console.log('indivual vid:' ,vid);
               self.vidId.push(vid.id.videoId);
-
               });
               search = dataFactory.stringVar();
 
