@@ -2,22 +2,17 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
     console.log('resultsController up and running');
 
     var options= {};
-
     var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
     var self = this;
-
-
 
     var search = "";
     var type = "";
     var workout = "";
 
-
     var searchResults = dataFactory.currentOptions();
     type = searchResults[0].type;
     workout = searchResults[0].workout + ' workout';
     console.log('concat' + ' ' + type + ' ' + workout);
-
 
     var arrayOfVideos  = {};
     self.vidId = [];
@@ -45,10 +40,6 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
 
               });
               search = dataFactory.stringVar();
-              console.log("Info I need ", dataFactory.currentOptions());
-              // var searchResults = dataFactory.currentOptions();
-              // type = searchResults[0].type;
-              // console.log('type: ', type);
 
         });
 

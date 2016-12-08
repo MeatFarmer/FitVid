@@ -17,5 +17,6 @@ youtubeAPI.controller('optionsController', ['dataFactory', function(dataFactory)
         console.log('this is the string var' + self.string);
         dataFactory.addOption(self.newOption);
 
+
     }
 }]);

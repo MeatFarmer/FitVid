@@ -50,9 +50,18 @@ ul li {
   margin: 0;
 }
 
-iframe[seamless] {
-    display: block;
+.org {
+  display: block;
 }
+
+/*iframe[seamless] {
+    display: inline-flex;
+}*/
+
+.video {
+  float: left;
+}
+
 
 .btn-primary {
   background: #952b2b;
