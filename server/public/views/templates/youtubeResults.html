@@ -1,16 +1,8 @@
-<!-- <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <form class="info">
 
-            <p><input type="text" id="search" placeholder="Type something..." autocomplete="off" class="form-control" /></p>
-            <p><input type="submit" value="search" class="form-control btn btn-primary w100"></p>
-        </form>
-        <div id="results"></div>
-    </div>
-</div> -->
 
-<!-- <div class="item">
-    <h2></h2>
-    <div ng-repeat="vid in result."
-    <iframe class="video w50" width="640" height="360" src="//www.youtube.com/embed/{{videoid}}" frameborder="0" allowfullscreen></iframe>
-</div> -->
+
+<div>
+    <div ng-repeat="vid in vidId">
+    <iframe class="video w50" width="640" height="360" src={{vid}} frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>

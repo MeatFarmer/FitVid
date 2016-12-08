@@ -26,20 +26,20 @@ youtubeAPI.controller('resultsController', ['$http', function($http) {
 
             arrayOfVideos.forEach(function(vid) {
               // console.log('indivual vid:' ,vid);
-              vidId.push(vid.id.videoId);
+              vidId.push("//www.youtube.com/embed/" + vid.id.videoId);
 
               });
 
             // console.log('self.video.data.items', self.video.data.items);
 
-            console.log(vidId);
+            console.log('vidId :', vidId);
         });
 
     }
 
     self.getVideo();
 
-    self.message = "Welcome!"
+
 }]);
 
 
