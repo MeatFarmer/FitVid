@@ -1,10 +1,16 @@
 youtubeAPI.controller('resultsController', ['$http', function($http) {
     console.log('resultsController up and running');
+
+  //   $sceDelegateProvider.resourceUrlWhitelist([
+  //  'self',
+  //  'https://www.youtube.com/**']);
+
+
     var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
     var self = this;
 
     var arrayOfVideos  = {};
-    var vidId = [];
+    self.vidId = [];
     self.video = {};
     self.title = '';
     self.videoid = '';
@@ -26,13 +32,13 @@ youtubeAPI.controller('resultsController', ['$http', function($http) {
 
             arrayOfVideos.forEach(function(vid) {
               // console.log('indivual vid:' ,vid);
-              vidId.push("//www.youtube.com/embed/" + vid.id.videoId);
+              self.vidId.push(vid.id.videoId);
 
               });
 
             // console.log('self.video.data.items', self.video.data.items);
 
-            console.log('vidId :', vidId);
+            console.log('vidId :', self.vidId);
         });
 
     }
