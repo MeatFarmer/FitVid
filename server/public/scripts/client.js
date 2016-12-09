@@ -4,9 +4,9 @@ youtubeAPI.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
         .when('/picker', {
-            templateUrl: '/views/templates/picker.html',
-            controller: 'pickerController',
-            controllerAs: 'picker'
+            templateUrl: '/views/templates/favorites.html',
+            controller: 'favoritesController',
+            controllerAs: 'favs'
         })
         .when('/logIn', {
             templateUrl: '/views/templates/logIn.html',

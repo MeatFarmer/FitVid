@@ -1,6 +1,8 @@
 youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($http, dataFactory) {
     console.log('resultsController up and running');
 
+    // ***** grab videos from API and append to DOM ***** //
+
     var options= {};
     var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
     var self = this;
@@ -42,8 +44,25 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
 
     }
 
-    self.getVideo();
+  self.getVideo();
 
+    // ***** Add Favorite Video to DB ***** //
+
+  self.addFavorite = function() {
+
+  $http.post('/favorites', self.vidId)
+    .then(function(response) {
+      // cool
+      console.log('response: ', response.data);
+      // make GET request for employee data
+      // self.newEmployee = {};
+      // getEmployees();
+    },
+    function(response) {
+      // error
+      console.log('ERROR response: ', response.data);
+    });
+}
 
 }]);
 

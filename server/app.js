@@ -14,6 +14,8 @@ app.get('/', function(req, res){
 
 app.use(express.static('server/public'));
 
+app.use('./favorites', favorites)
+
 app.listen(portDecision, function(){
   console.log('running on port', portDecision);
 });
