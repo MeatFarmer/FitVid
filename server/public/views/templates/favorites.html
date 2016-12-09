@@ -1,2 +1,11 @@
 
 <h1> FAVS </h1>
+
+<div ng-repeat="vid in favorites.vidId">
+    <div class = 'video'>
+    <iframe style="display:block" width="440" height="260"
+    ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen>
+    </iframe>
+    <button class='vidButton btn-primary'> CLICK </button>
+  </div>
+</div>

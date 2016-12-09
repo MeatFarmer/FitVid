@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var portDecision = process.env.PORT || 3000;
 var request = require ('request');
+var favorites = require('./public/routes/favorites');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

@@ -3,7 +3,7 @@ var youtubeAPI = angular.module('youtubeAPI', ['ngRoute']);
 youtubeAPI.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
-        .when('/picker', {
+        .when('/favorites', {
             templateUrl: '/views/templates/favorites.html',
             controller: 'favoritesController',
             controllerAs: 'favs'

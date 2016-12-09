@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var pg = require('pg');
-var config = require('../config/dbconfig');
+var config = require('../../config/dbconfig');
 
 var pool = new pg.Pool({
   database: config.database
@@ -39,6 +39,7 @@ router.get('/', function(req, res) {
         .then(function(result) {
           client.release();
           res.send(result.rows);
+          console.log(results.rows);
         })
         .catch(function(err) {
           // error
