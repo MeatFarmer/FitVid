@@ -2,9 +2,9 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
-var portDecision = process.env.PORT || 3000;
 var request = require ('request');
 var favorites = require('./public/routes/favorites');
+var portDecision = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -15,7 +15,7 @@ app.get('/', function(req, res){
 
 app.use(express.static('server/public'));
 
-app.use('./favorites', favorites)
+app.use('/favorites', favorites)
 
 app.listen(portDecision, function(){
   console.log('running on port', portDecision);

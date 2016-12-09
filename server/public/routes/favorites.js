@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
     .then(function(client) {
       // make query
       client.query(
-        'INSERT INTO favorites (videoId) ' +
+        'INSERT INTO favorites (vidid) ' +
         'VALUES ($1)',
         [newFav.vidId])
         .then(function(result) {
