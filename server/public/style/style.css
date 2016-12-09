@@ -12,6 +12,10 @@
     color: gray;
 }
 
+.vidButton {
+  width: 440px;
+}
+
 img {
   height: 400px;
   width: 400px;

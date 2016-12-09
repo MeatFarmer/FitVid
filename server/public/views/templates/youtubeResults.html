@@ -1,5 +1,8 @@
-<div class='org'>
+<!-- <div class='org'> -->
     <div ng-repeat="vid in results.vidId">
-        <iframe style="display:block" class="video" width="440" height="260" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
+        <div class = 'video'>
+        <iframe style="display:block" width="440" height="260" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
+        <button class='vidButton btn-primary'> CLICK </button>
+      </div>
     </div>
-</div>
+<!-- </div> -->
