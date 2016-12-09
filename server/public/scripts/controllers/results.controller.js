@@ -27,13 +27,14 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
         var query = 'https://www.googleapis.com/youtube/v3/search';
         query += '?part=snippet';
         query += '&q=' + ' ' + type + ' ' + workout;
-        query += '&maxResults=15';
+        query += '&maxResults=5';
         query += '&key=' + key;
 
         var request = encodeURI(query) + '&callback=JSON_CALLBACK';
 
         $http.jsonp(request).then(function(response) {
             self.video = response;
+            console.log(response);
             arrayOfVideos = self.video.data.items;
             arrayOfVideos.forEach(function(vid) {
               self.vidId.push(vid.id.videoId);
@@ -48,9 +49,10 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
 
     // ***** Add Favorite Video to DB ***** //
 
-  self.addFavorite = function() {
-
-  $http.post('/favorites', self.vidId)
+  self.addFavorite = function(index) {
+    console.log(index);
+    console.log('self', self.vidId);
+  $http.post('/favorites', {vidid : self.vidId[index]})
     .then(function(response) {
       // cool
       console.log('response: ', response.data);

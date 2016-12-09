@@ -7,8 +7,10 @@ var pool = new pg.Pool({
 });
 
 router.post('/', function(req, res) {
-  console.log('adding employee');
+  console.log('adding vid');
+
   var newFav = req.body;
+  console.log('newFav', newFav);
   // store in DB
   pool.connect()
     .then(function(client) {
@@ -16,7 +18,7 @@ router.post('/', function(req, res) {
       client.query(
         'INSERT INTO favorites (vidid) ' +
         'VALUES ($1)',
-        [newFav.vidId])
+        [newFav.vidid])
         .then(function(result) {
           client.release();
           res.sendStatus(201);
