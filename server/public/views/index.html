@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/dropdown.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="/vendor/angular.min.js"></script>
@@ -32,6 +33,16 @@
     <main ng-view></main>
 
     <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script>
+        (function() {
+            var customSelects = document.querySelectorAll(".custom-dropdown__select");
+            for (var i = 0; i < customSelects.length; i++) {
+                if (customSelects[i].hasAttribute("disabled")) {
+                    customSelects[i].parentNode.className += " custom-dropdown--disabled";
+                }
+            }
+        })()
+    </script>
 </body>
 
 </html>

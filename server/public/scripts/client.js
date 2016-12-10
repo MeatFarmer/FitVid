@@ -33,9 +33,3 @@ youtubeAPI.filter('youtubeEmbedUrl', function ($sce) {
       return $sce.trustAsResourceUrl('http://www.youtube.com/embed/' + videoId);
     };
   });
-
-  // youtubeAPI.filter('youtubeEmbedUrlFav', function ($sce) {
-  //     return function(favId) {
-  //       return $sce.trustAsResourceUrl('http://www.youtube.com/embed/' + favId);
-  //     };
-  //   });
