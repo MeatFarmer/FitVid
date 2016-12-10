@@ -40,10 +40,6 @@
       (appearance: none)) {
 
 
-  h2+p {
-    color: green; /* Demo only */
-  }
-
   .custom-dropdown {
     position: relative;
     display: inline-block;

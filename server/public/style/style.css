@@ -3,6 +3,12 @@
     margin-left: -70px;
 }
 
+.centerOptions {
+  padding: 20% 0;
+
+  margin: auto;
+}
+
 .picker-button {
     width: 120px;
     height: 120px;
