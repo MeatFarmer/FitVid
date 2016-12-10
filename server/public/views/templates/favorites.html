@@ -1,11 +1,14 @@
 
 <h1> FAVS </h1>
+<!-- <iframe src="//www.youtube.com/embed/tePLvy2jSoU"> </iframe> -->
 
-<div ng-repeat="vid in favorites.vidId">
+
+ng-src="{{ vid | youtubeEmbedUrl }}"
+
+<div ng-repeat="vid in favs.favId">
     <div class = 'video'>
-    <iframe style="display:block" width="440" height="260"
-    ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen>
-    </iframe>
-    <button class='vidButton btn-primary'> CLICK </button>
+
+    <iframe style="display:block" width="440" height="260" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
+    <!-- <button class='vidButton btn-primary' ng-click="results.addFavorite($index)"> CLICK </button> -->
   </div>
 </div>

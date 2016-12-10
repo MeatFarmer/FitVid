@@ -41,7 +41,7 @@ router.get('/', function(req, res) {
         .then(function(result) {
           client.release();
           res.send(result.rows);
-          console.log(results.rows);
+          console.log('select all from server', results.rows);
         })
         .catch(function(err) {
           // error

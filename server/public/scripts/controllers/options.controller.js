@@ -1,3 +1,4 @@
+// $location.path('/results')
 youtubeAPI.controller('optionsController', ['dataFactory', function(dataFactory) {
     console.log('optionsController up and running');
 

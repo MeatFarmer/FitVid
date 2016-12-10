@@ -18,6 +18,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
 
     var arrayOfVideos  = {};
     self.vidId = [];
+    console.log('self.vidId', self.vidId);
     self.video = {};
     self.title = '';
     self.videoid = '';
@@ -38,6 +39,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
             arrayOfVideos = self.video.data.items;
             arrayOfVideos.forEach(function(vid) {
               self.vidId.push(vid.id.videoId);
+              console.log('videoId', self.videoId);
               });
               search = dataFactory.stringVar();
 

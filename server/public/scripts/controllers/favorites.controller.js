@@ -1,24 +1,23 @@
 youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', function($http, dataFactory) {
     console.log('favoriteController up and running');
 
-      getVideos();
+      var self = this;
+      var arrayOfFavs = {};
+      self.favId = [];
 
-      function getEmployees() {
-          $http.get('/employees')
+
+      self.getVideos = function() {
+          $http.get('/favorites')
               .then(function(response) {
-                  self.empArray = response.data;
-                  updateSalary();
-              });
-      }
-
-
-      // remove an employee
-      self.toggleActiveEmployee = function(id) {
-        console.log('employee id: ', id);
-        $http.put('/employees/' + id)
-          .then(function(response) {
-            console.log('updated employee');
-            getEmployees();
+                  arrayOfFavs = response.data;
+                  console.log('arrayOfFavs', arrayOfFavs);
+                  arrayOfFavs.forEach(function(fav) {
+                    self.favId.push(fav.vidid);
+                    });
+                  console.log('favId', self.favId);
+                  // updateFavorites();
           });
       }
+
+      self.getVideos();
 }]);
