@@ -1,5 +1,39 @@
-youtubeAPI.controller('logInController', ['$http', function($http) {
+youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFactory',
+'dataFactory', function($firebaseAuth, $http, dataFactory, AuthDataFactory) {
     console.log('logInController up and running');
+
+    var auth = $firebaseAuth();
+    var self = this;
+    self.currentUser = null;
+    self.favorites = {};
+
+
+    self.logIn = function() {
+        auth.$signInWithPopup("google").then(function(firebaseUser) {
+            console.log("Firebase authenticaed in controller as ", firebaseUser.user.displayName);
+            self.currentUser = firebaseUser.user;
+            AuthDataFactory.setCurrentUser(self.currentUser);
+
+        });
+    };
+
+    // This code runs whenever the user changes authentication states, or whenever the hell it wants in my case
+    auth.$onAuthStateChanged(function(user) {
+        if (user) {
+            user.getToken().then(function(data) {});
+        }
+    });
+
+    // This code runs when the user logs out
+    self.logOut = function() {
+        auth.$signOut().then(function() {
+            self.currentUser = {};
+            AuthDataFactory.setCurrentUser(null);
+            self.fishData = {};
+            console.log('Logging the user out!');
+        });
+    };
+
 
     self.message = "Welcome!"
 }]);

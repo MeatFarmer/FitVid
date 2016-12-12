@@ -1,4 +1,4 @@
-var youtubeAPI = angular.module('youtubeAPI', ['ngRoute']);
+var youtubeAPI = angular.module('youtubeAPI', ['ngRoute', 'firebase']);
 
 youtubeAPI.config(['$routeProvider', function($routeProvider) {
 
