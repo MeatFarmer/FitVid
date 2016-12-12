@@ -58,7 +58,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
   self.addFavorite = function(index) {
     console.log(index);
     console.log('self', self.vidId);
-  $http.post('/favorites', {vidid : self.vidId[index]})
+  $http.post('/favorites', {vidid : self.vidId[index], email : email})
     .then(function(response) {
       // cool
       console.log('response: ', response.data);
