@@ -2,3 +2,5 @@
 *.log
 node_modules/
 .env
+fitvid-key
+fitvid-key.json
