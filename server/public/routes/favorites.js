@@ -2,6 +2,8 @@ var router = require('express').Router();
 var pg = require('pg');
 var config = require('../config/dbconfig');
 
+var email = "";
+
 var pool = new pg.Pool({
   database: config.database
 });
@@ -10,6 +12,7 @@ router.post('/', function(req, res) {
   console.log('adding vid');
 
   var newFav = req.body;
+  console.log(req.head);
   console.log('newFav', newFav);
   // store in DB
   pool.connect()
@@ -32,12 +35,17 @@ router.post('/', function(req, res) {
     });
 });
 
-router.get('/', function(req, res) {
+router.get('/:curEmail', function(req, res) {
   pool.connect()
     .then(function(client) {
+      console.log('req.params', req.params);
+
+      email = "'" + req.params.curEmail + "'";
+      console.log('email :', email);
+
       // make query
       client.query(
-        'SELECT * FROM favorites')
+        'SELECT * FROM favorites WHERE email = ' + email)
         .then(function(result) {
           client.release();
           res.send(result.rows);
