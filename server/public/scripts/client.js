@@ -11,7 +11,7 @@ youtubeAPI.config(['$routeProvider', function($routeProvider) {
         .when('/logIn', {
             templateUrl: '/views/templates/logIn.html',
             controller: 'logInController',
-            controllerAs: 'logIn'
+            controllerAs: 'log'
         })
         .when('/options', {
             templateUrl: '/views/templates/options.html',

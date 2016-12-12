@@ -1,5 +1,5 @@
 youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFactory',
-'dataFactory', function($firebaseAuth, $http, dataFactory, AuthDataFactory) {
+'dataFactory', function($firebaseAuth, $http, AuthDataFactory, dataFactory) {
     console.log('logInController up and running');
 
     var auth = $firebaseAuth();
@@ -12,12 +12,13 @@ youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFac
         auth.$signInWithPopup("google").then(function(firebaseUser) {
             console.log("Firebase authenticaed in controller as ", firebaseUser.user.displayName);
             self.currentUser = firebaseUser.user;
+            console.log(self.currentUser);
             AuthDataFactory.setCurrentUser(self.currentUser);
 
         });
     };
 
-    // This code runs whenever the user changes authentication states, or whenever the hell it wants in my case
+    // This code runs whenever the user changes authentication states
     auth.$onAuthStateChanged(function(user) {
         if (user) {
             user.getToken().then(function(data) {});

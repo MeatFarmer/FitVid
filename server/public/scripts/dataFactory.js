@@ -23,6 +23,6 @@ youtubeAPI.factory('dataFactory', [function() {
         stringVar: stringVar
     };
     return publicApi;
-    // console.log('dataFactory', options);
+
 
 }]);
