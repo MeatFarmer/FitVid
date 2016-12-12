@@ -3,7 +3,6 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var request = require ('request');
-var decoder = require('./public/scripts/decoder');
 var favorites = require('./public/routes/favorites');
 var portDecision = process.env.PORT || 3000;
 
@@ -13,8 +12,6 @@ app.use(bodyParser.json());
 app.get('/', function(req, res){
   res.sendFile(path.resolve('./server/public/views/index.html'));
 });
-
-// app.use(decoder.token);
 
 app.use(express.static('server/public'));
 
