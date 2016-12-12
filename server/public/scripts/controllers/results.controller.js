@@ -1,4 +1,5 @@
-youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($http, dataFactory) {
+youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
+'AuthDataFactory', function($http, dataFactory, AuthDataFactory) {
     console.log('resultsController up and running');
 
     // ***** grab videos from API and append to DOM ***** //
@@ -10,19 +11,22 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory', function($ht
     var search = "";
     var type = "";
     var workout = "";
+    var email = "";
 
     var searchResults = dataFactory.currentOptions();
     type = searchResults[0].type;
     workout = searchResults[0].workout + ' workout';
     console.log('concat' + ' ' + type + ' ' + workout);
 
+    email = AuthDataFactory.setCurrentEmail();
+    console.log('email is:', email);
+
     var arrayOfVideos  = {};
     self.vidId = [];
-    console.log('self.vidId', self.vidId);
     self.video = {};
     self.title = '';
     self.videoid = '';
-    console.log(type);
+;
 
     self.getVideo = function() {
         var query = 'https://www.googleapis.com/youtube/v3/search';

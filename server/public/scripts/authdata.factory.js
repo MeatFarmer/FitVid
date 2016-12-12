@@ -3,6 +3,18 @@ youtubeAPI.factory('AuthDataFactory', ["$http", function($http) {
   console.log('AuthDataFactory running');
 
   var currentUser = null;
+  var currentEmail = "";
+
+
+  function setEmail (email) {
+    currentEmail = email;
+    return currentEmail;
+
+  }
+
+  function setCurrentEmail() {
+    return currentEmail;
+  }
 
   function setCurrentUser(theUser) {
     currentUser = theUser;
@@ -15,7 +27,9 @@ youtubeAPI.factory('AuthDataFactory', ["$http", function($http) {
 
   var authApi = {
     setCurrentUser: setCurrentUser,
-    getCurrentUser: getCurrentUser
+    getCurrentUser: getCurrentUser,
+    setEmail: setEmail,
+    setCurrentEmail: setCurrentEmail
 
   };
 

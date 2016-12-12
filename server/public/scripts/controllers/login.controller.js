@@ -4,6 +4,7 @@ youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFac
 
     var auth = $firebaseAuth();
     var self = this;
+    var email = "";
     self.currentUser = null;
     self.favorites = {};
 
@@ -11,9 +12,12 @@ youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFac
     self.logIn = function() {
         auth.$signInWithPopup("google").then(function(firebaseUser) {
             console.log("Firebase authenticaed in controller as ", firebaseUser.user.displayName);
+            email = firebaseUser.user.email
             self.currentUser = firebaseUser.user;
             console.log(self.currentUser);
             AuthDataFactory.setCurrentUser(self.currentUser);
+            AuthDataFactory.setEmail(email);
+            console.log(email);
 
         });
     };
@@ -30,7 +34,7 @@ youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFac
         auth.$signOut().then(function() {
             self.currentUser = {};
             AuthDataFactory.setCurrentUser(null);
-            self.fishData = {};
+            self.favorites = {};
             console.log('Logging the user out!');
         });
     };
