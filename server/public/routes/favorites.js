@@ -3,6 +3,7 @@ var pg = require('pg');
 var config = require('../config/dbconfig');
 
 var email = "";
+var deleteID = {};
 
 var pool = new pg.Pool({
     database: config.database
@@ -51,24 +52,33 @@ router.get('/:curEmail', function(req, res) {
         });
 });
 
-// router.put('/:id', function(req, res) {
-//   pool.connect()
-//     .then(function(client) {
-//       // make query
-//       client.query(
-//         'UPDATE employees SET active = NOT active WHERE id = $1',
-//       [req.params.id])
-//         .then(function(result) {
-//           client.release();
-//           res.sendStatus(200);
-//         })
-//         .catch(function(err) {
-//           // error
-//           client.release();
-//           console.log('error on UPDATE', err);
-//           res.sendStatus(500);
-//         });
-//     });
-// });
+
+router.delete('/', function(req, res) {
+  deleteID = req.params.id;
+  console.log('req.params', req.params);
+  email = "'" + req.params.curEmail + "'";
+
+  console.log('book id to delete: ', deleteID);
+  pg.connect(connectionString, function(err, client, done) {
+    if(err) {
+      console.log('connection error: ', err);
+      res.sendStatus(500);
+    }
+
+    client.query(
+      'DELETE FROM favorites WHERE id = $1 AND email = $2',
+      [deleteID, email],
+      function(err, result) {
+        done();
+
+        if(err) {
+          res.sendStatus(500);
+        } else {
+          res.sendStatus(200);
+        }
+      });
+    });
+
+});
 
 module.exports = router;
