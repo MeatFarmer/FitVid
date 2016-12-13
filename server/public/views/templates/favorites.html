@@ -1,8 +1,13 @@
 
-<h1> FAVS </h1>
 
-<div ng-repeat="vid in favs.favId">
-    <div class = 'video'>
-    <iframe style="display:block" width="440" height="260" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
+
+  <div id="loader"></div>
+    <div id="myDiv" style="display:none;" >
+        <h1> FAVS </h1>
+        <div ng-repeat="vid in favs.favId">
+            <div class='video'>
+                <iframe style="display:block" width="440" height="260" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+      </div>
