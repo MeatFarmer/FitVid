@@ -1,10 +1,12 @@
-<!-- <div class='org'> -->
+<div id="loader"></div>
+  <div id="myDiv" style="display:none;" >
 
     <div ng-repeat="vid in results.vidId">
         <div class = 'video'>
-        
+
         <iframe style="display:block" width="440" height="260" ng-src="{{ vid | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
         <button class='vidButton btn-primary' ng-click="results.addFavorite($index)"> CLICK </button>
       </div>
     </div>
-<!-- </div> -->
+</div>
+</div>

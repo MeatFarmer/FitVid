@@ -3,6 +3,24 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
     function($http, dataFactory, AuthDataFactory) {
         console.log('resultsController up and running');
 
+        // ***** load loading spinner while results populate ***** //
+
+        myFunction();
+
+         var myVar;
+
+         function myFunction() {
+             console.log('myfunction running');
+             myVar = setTimeout(showPage, 1000);
+         }
+
+         function showPage() {
+             console.log('hello');
+             document.getElementById("loader").style.display = "none";
+             document.getElementById("myDiv").style.display = "block";
+         }
+
+
         // ***** grab videos from API and append to DOM ***** //
 
         var options = {};
