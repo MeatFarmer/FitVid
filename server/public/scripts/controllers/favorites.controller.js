@@ -31,7 +31,7 @@ youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', 'AuthDataF
                 });
             });
     }
-self.getVideos();
+
 
 
   self.deleteVid = function(vid) {
@@ -40,10 +40,12 @@ self.getVideos();
     $http.delete('/favorites/' + vid + '/' + curEmail)
       .then(function(response){
         console.log('delete finsihsed');
+          self.favId = [];
           self.getVideos();
+
       })
 
   }
-
+self.getVideos();
 
 }]);
