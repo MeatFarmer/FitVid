@@ -5,7 +5,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
 
         // ***** load loading spinner while results populate ***** //
 
-        myFunction();
+        // myFunction();
 
          var myVar;
 
@@ -58,6 +58,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
                 arrayOfVideos.forEach(function(vid) {
                     self.vidId.push(vid.id.videoId);
                     console.log('vidId', self.vidId);
+                    showPage();
                 });
             });
         }

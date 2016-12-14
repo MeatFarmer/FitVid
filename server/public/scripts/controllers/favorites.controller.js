@@ -1,7 +1,10 @@
 youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', 'AuthDataFactory', function($http, dataFactory, AuthDataFactory) {
     console.log('favoriteController up and running');
 
-   myFunction();
+
+    // ***** load loading spinner while results populate ***** //
+
+   //  myFunction();
 
     var myVar;
 
@@ -16,6 +19,8 @@ youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', 'AuthDataF
         document.getElementById("myDiv").style.display = "block";
     }
 
+    // ***** load current favorite videos  ***** //
+
     var self = this;
     var arrayOfFavs = {};
     self.favId = [];
@@ -28,11 +33,12 @@ youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', 'AuthDataF
                 arrayOfFavs = response.data;
                 arrayOfFavs.forEach(function(fav) {
                     self.favId.push(fav.vidid);
+                    showPage();
                 });
             });
     }
 
-
+  // ***** deletet video from favorites list ***** //
 
   self.deleteVid = function(vid) {
     console.log('vid is: ', vid);

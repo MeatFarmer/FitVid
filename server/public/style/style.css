@@ -50,6 +50,16 @@ ul li {
  top: 50%;
 }
 
+button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
 .w100 {
   width: 100%;
 }
@@ -73,14 +83,14 @@ ul li {
 }
 
 
-.btn-primary {
+/*.btn-primary {
   background: #952b2b;
   border-color: #957575;
  }
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   background: #782b2b;
   border-color: #952b2b;
-}
+}*/
 
 /**********Nav Bar ****************/
 
