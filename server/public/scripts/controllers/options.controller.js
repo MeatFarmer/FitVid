@@ -1,5 +1,5 @@
 // $location.path('/results')
-youtubeAPI.controller('optionsController', ['dataFactory', function(dataFactory) {
+youtubeAPI.controller('optionsController', ['dataFactory', '$location', function(dataFactory, $location) {
     console.log('optionsController up and running');
 
     var self = this;
@@ -17,6 +17,7 @@ youtubeAPI.controller('optionsController', ['dataFactory', function(dataFactory)
         self.string = self.newOption.workout + " " + self.newOption.type
         console.log('this is the string var' + self.string);
         dataFactory.addOption(self.newOption);
+        $location.path('/youtubeResults');
 
 
     }

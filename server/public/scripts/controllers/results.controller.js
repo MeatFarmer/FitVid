@@ -5,13 +5,13 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
 
         // ***** load loading spinner while results populate ***** //
 
-        // myFunction();
+        myFunction();
 
          var myVar;
 
          function myFunction() {
              console.log('myfunction running');
-             myVar = setTimeout(showPage, 1000);
+             myVar = setTimeout(showPage, 2500);
          }
 
          function showPage() {
@@ -47,7 +47,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
             var query = 'https://www.googleapis.com/youtube/v3/search';
             query += '?part=snippet';
             query += '&q=' + ' ' + type + ' ' + workout;
-            query += '&maxResults=5';
+            query += '&maxResults=15';
             query += '&key=' + key;
 
             var request = encodeURI(query) + '&callback=JSON_CALLBACK';
@@ -58,7 +58,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
                 arrayOfVideos.forEach(function(vid) {
                     self.vidId.push(vid.id.videoId);
                     console.log('vidId', self.vidId);
-                    showPage();
+                    // showPage();
                 });
             });
         }

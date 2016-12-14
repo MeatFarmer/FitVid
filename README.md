@@ -31,6 +31,7 @@ Then -
 ```
 npm install
 npm start
+
 ```
 
 Once installed the application should be running at http://localhost:3000
@@ -38,7 +39,7 @@ Once installed the application should be running at http://localhost:3000
 
 ## Heroku
 
-link to future heroku site
+link to future Heroku site
 
 ## Built With
 

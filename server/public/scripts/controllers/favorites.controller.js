@@ -4,13 +4,13 @@ youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', 'AuthDataF
 
     // ***** load loading spinner while results populate ***** //
 
-   //  myFunction();
+    myFunction();
 
     var myVar;
 
     function myFunction() {
         console.log('myfunction running');
-        myVar = setTimeout(showPage, 2500);
+        myVar = setTimeout(showPage, 2000);
     }
 
     function showPage() {
