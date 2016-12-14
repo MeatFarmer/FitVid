@@ -24,7 +24,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
         // ***** grab videos from API and append to DOM ***** //
 
         var options = {};
-        var key = 'AIzaSyA31Ve2pMIxU2kgzdf_wGDNH7dsmTA58L4';
+        var key = apiConfig.key;
         var self = this;
 
         var search = "";
@@ -54,13 +54,11 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
 
             $http.jsonp(request).then(function(response) {
                 self.video = response;
-                console.log(response);
                 arrayOfVideos = self.video.data.items;
                 arrayOfVideos.forEach(function(vid) {
                     self.vidId.push(vid.id.videoId);
-                    console.log('videoId', self.videoId);
+                    console.log('vidId', self.vidId);
                 });
-                search = dataFactory.stringVar();
             });
         }
 
@@ -70,7 +68,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
 
         self.addFavorite = function(index) {
             console.log(index);
-            console.log('self', self.vidId);
+            console.log('line 71', self.vidId);
             $http.post('/favorites', {
                     vidid: self.vidId[index],
                     email: email

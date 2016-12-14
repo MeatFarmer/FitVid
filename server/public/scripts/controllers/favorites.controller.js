@@ -7,7 +7,7 @@ youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', 'AuthDataF
 
     function myFunction() {
         console.log('myfunction running');
-        myVar = setTimeout(showPage, 1000);
+        myVar = setTimeout(showPage, 2500);
     }
 
     function showPage() {
@@ -31,19 +31,19 @@ youtubeAPI.controller('favoritesController', ['$http', 'dataFactory', 'AuthDataF
                 });
             });
     }
-
-    self.getVideos();
+self.getVideos();
 
 
   self.deleteVid = function(vid) {
     console.log('vid is: ', vid);
-    id = vid;
-
-    $http.delete('/favorites/' + id + '/' + curEmail)
+    console.log('curEmail : ', curEmail);
+    $http.delete('/favorites/' + vid + '/' + curEmail)
       .then(function(response){
         console.log('delete finsihsed');
-        getVideos();
+          self.getVideos();
       })
+
   }
+
 
 }]);

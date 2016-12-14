@@ -2,15 +2,21 @@ var router = require('express').Router();
 var pg = require('pg');
 var config = require('../config/dbconfig');
 
+
 var email = "";
-var deleteID = {};
+var vid = "";
+var newFav = {};
+
 
 var pool = new pg.Pool({
     database: config.database
 });
 
 router.post('/', function(req, res) {
-    var newFav = req.body;
+    console.log('params : ', req.params);
+    newFav = req.body;
+    console.log;
+    console.log('newfav.vidid: ', newFav.vidid);
     // store in DB
     pool.connect()
         .then(function(client) {
@@ -53,26 +59,28 @@ router.get('/:curEmail', function(req, res) {
 });
 
 
-router.delete('/', function(req, res) {
-  deleteID = req.params.id;
-  console.log('req.params', req.params);
-  email = "'" + req.params.curEmail + "'";
+router.delete('/:vid/:curEmail', function(req, res) {
+  vid = req.params.vid;
+  console.log('req.body :', req.body);
+  console.log('req.params.vid', req.params.vid);
+  email = req.params.curEmail;
 
-  console.log('book id to delete: ', deleteID);
-  pg.connect(connectionString, function(err, client, done) {
+  console.log('book id to delete: ', vid);
+  pool.connect(function(err, client, done) {
     if(err) {
       console.log('connection error: ', err);
       res.sendStatus(500);
     }
 
     client.query(
-      'DELETE FROM favorites WHERE id = $1 AND email = $2',
-      [deleteID, email],
+      'DELETE FROM favorites WHERE vidid = $1 AND email = $2',
+      [vid, email],
       function(err, result) {
         done();
 
         if(err) {
           res.sendStatus(500);
+          console.log(err);
         } else {
           res.sendStatus(200);
         }

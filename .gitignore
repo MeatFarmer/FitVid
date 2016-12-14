@@ -3,4 +3,5 @@
 node_modules/
 .env
 fitvid-key
-fitvid-key.json
+server/fitvid-key.json
+config/
