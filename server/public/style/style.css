@@ -1,11 +1,19 @@
+.color {
+  background-color: #F7F6F2;
+}
+
+footer {
+  background-color: #F7F6F2;
+}
+
 .dropdown-menu {
     left: 50% !important;
     margin-left: -70px;
 }
 
-img {
+/*img {
   text-align: center;
-}
+}*/
 
 .centerOptions {
   padding: 20% 0;

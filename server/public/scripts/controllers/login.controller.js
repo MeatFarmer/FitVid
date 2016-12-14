@@ -1,6 +1,6 @@
 youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFactory',
-    'dataFactory',
-    function($firebaseAuth, $http, AuthDataFactory, dataFactory) {
+    'dataFactory', '$location',
+    function($firebaseAuth, $http, AuthDataFactory, dataFactory, $location) {
         console.log('logInController up and running');
 
         var auth = $firebaseAuth();
@@ -15,7 +15,9 @@ youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFac
                 self.currentUser = firebaseUser.user;
                 AuthDataFactory.setCurrentUser(self.currentUser);
                 AuthDataFactory.setEmail(email);
+
             });
+            $location.path('/options');
         };
 
         // This code runs whenever the user changes authentication states
