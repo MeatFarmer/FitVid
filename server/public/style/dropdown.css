@@ -30,7 +30,7 @@
 }
 
 .custom-dropdown__select--red {
-  background-color: #d53a22;
+  background-color: #CE534D;
   color: #fff;
 }
 
@@ -107,7 +107,7 @@
 
   /* Red dropdown style */
   .custom-dropdown--red::before {
-    background-color: #d53a22;
+    background-color: #CE534D;
   }
 
   .custom-dropdown--red::after {

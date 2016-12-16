@@ -1,9 +1,10 @@
 * {
-  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-family: 'Quicksand', sans-serif;
 }
 
 .color {
-  background-color: #F7F6F2;
+  background-color: #DED4B9;
 }
 
 footer {
@@ -22,9 +23,10 @@ footer {
 }
 
 .centerOptions {
-  padding: 20% 0;
-  top: 10%
-  margin: auto;
+  padding: 5% 0;
+  /*top: 10%;*/
+  margin-top: 10px;
+  /*margin: 10% auto;*/
 }
 
 .picker-button {
