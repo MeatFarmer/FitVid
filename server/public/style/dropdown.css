@@ -124,3 +124,9 @@
   }
 
 }
+
+/* nav bar stuff */
+.example6 .navbar-brand{
+  background: url('/media/FitVid.png') center / contain no-repeat;
+  width: 200px;
+}

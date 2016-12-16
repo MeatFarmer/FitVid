@@ -3,11 +3,15 @@ youtubeAPI.controller('logInController', ["$firebaseAuth", '$http', 'AuthDataFac
     function($firebaseAuth, $http, AuthDataFactory, dataFactory, $location) {
         console.log('logInController up and running');
 
+        // ***** variable for login info ***** //
+
         var auth = $firebaseAuth();
         var self = this;
         var email = "";
         self.currentUser = null;
         self.favorites = {};
+
+        // ***** function for log in and log out
 
         self.logIn = function() {
             auth.$signInWithPopup("google").then(function(firebaseUser) {

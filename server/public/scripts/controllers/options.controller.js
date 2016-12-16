@@ -5,20 +5,16 @@ youtubeAPI.controller('optionsController', ['dataFactory', '$location', function
     var self = this;
     self.string = '';
 
+    // ***** options the user picked from the options pages ***** //
     self.newOption = {};
     self.newOption.workout = "";
     self.newOption.type = "";
 
-    console.log();
+    // ***** addOption function that adds user input for the youtubeAPI ***** //
 
     self.addOption = function() {
-        console.log('adding option:' + self.newOption.workout + ' ' + self.newOption.type);
-        // dataFactory.options.push(self.newOption);
         self.string = self.newOption.workout + " " + self.newOption.type
-        console.log('this is the string var' + self.string);
         dataFactory.addOption(self.newOption);
         $location.path('/youtubeResults');
-
-
     }
 }]);
