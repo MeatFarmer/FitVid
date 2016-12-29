@@ -22,7 +22,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
 
 
         // ***** grab videos from API and append to DOM ***** //
-
+        
         var options = {};
         var key = apiConfig.key;
         var self = this;
