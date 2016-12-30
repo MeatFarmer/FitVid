@@ -22,7 +22,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
 
 
         // ***** grab videos from API and append to DOM ***** //
-        
+
         var options = {};
         var key = apiConfig.key;
         var self = this;
@@ -70,7 +70,7 @@ youtubeAPI.controller('resultsController', ['$http', 'dataFactory',
         self.addFavorite = function(index) {
             console.log(index);
             console.log('line 71', self.vidId);
-            $http.post('/favorites', {
+            $http.post('/favorites/', {
                     vidid: self.vidId[index],
                     email: email
                 })
