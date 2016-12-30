@@ -30,6 +30,6 @@ youtubeAPI.config(['$routeProvider', function($routeProvider) {
 
 youtubeAPI.filter('youtubeEmbedUrl', function ($sce) {
     return function(videoId) {
-      return $sce.trustAsResourceUrl('http://www.youtube.com/embed/' + videoId);
+      return $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + videoId);
     };
   });
