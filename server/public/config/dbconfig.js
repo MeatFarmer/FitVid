@@ -11,7 +11,6 @@ if(process.env.DATABASE_URL != undefined) {
     config.database = 'sigma';
 }
 
-git 
 
 
 
