@@ -8,7 +8,7 @@ if(process.env.DATABASE_URL != undefined) {
     config.database = process.env.DATABASE_URL; // + "?ssl=true";
 } else {
     // running locally, use our local database instead
-    config.database = 'sigma';
+    config.database = 'siga';
 }
 
 

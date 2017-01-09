@@ -34,12 +34,14 @@ router.post('/', function(req, res) {
                     console.log('error on INSERT', err);
                     res.sendStatus(500);
                 });
-        });
+        })
+
 });
 
 router.get('/:curEmail', function(req, res) {
     pool.connect()
         .then(function(client) {
+          console.log('HERE');
             email = "'" + req.params.curEmail + "'";
             // make query
             client.query(
@@ -57,10 +59,10 @@ router.get('/:curEmail', function(req, res) {
                 });
         })
         .catch(function(err) {
-          // client.release();
-          console.log('CONNECTION ERROR!! ' , err);
+          console.log('catch ERROR!! ' , err);
           res.sendStatus(510);
         });
+
 });
 
 
