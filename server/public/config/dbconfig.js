@@ -5,7 +5,7 @@ var config = {
 //
 // If we are running on Heroku, use the remote database (with SSL)
 if(process.env.DATABASE_URL != undefined) {
-    config.database = process.env.DATABASE_URL; // + "?ssl=true";
+    config.database = process.env.DATABASE_URL + "?ssl=true";
 } else {
     // running locally, use our local database instead
     config.database = 'siga';
