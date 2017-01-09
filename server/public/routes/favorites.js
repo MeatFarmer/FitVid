@@ -55,6 +55,11 @@ router.get('/:curEmail', function(req, res) {
                     console.log('error on SELECT', err);
                     res.sendStatus(500);
                 });
+        })
+        .catch(function(err) {
+          // client.release();
+          console.log('CONNECTION ERROR!! ' , err);
+          res.sendStatus(510);
         });
 });
 
