@@ -8,9 +8,7 @@ var vid = "";
 var newFav = {};
 
 
-var pool = new pg.Pool({
-    database: config.database
-});
+var pool = new pg.Pool(config);
 
 router.post('/', function(req, res) {
     console.log('params : ', req.params);
