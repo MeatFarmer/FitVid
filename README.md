@@ -1,7 +1,9 @@
 <img src="server/public/media/FitVid.png" width="300">
 
 <!-- # ![FitVid](server/media/FitVid.png =250x) -->
+## Heroku
 
+https://peaceful-anchorage-88515.herokuapp.com
 
 # FitVid
 
@@ -21,12 +23,9 @@ FitVid is a full stack web app designed with the fitness enthusiast in mind. Fit
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 
-
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-To run FitVid from its npm package:
+To run FitVid:
 
 ```
 git clone https://github.com/philgebauer/FitVid.git
@@ -44,18 +43,9 @@ npm start
 Once installed the application should be running at http://localhost:3000
 
 
-## Heroku
-
-link to future Heroku site
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-
 ## Authors
+
+- Phil Gebauer — [@philgebauer](http://github.com/philgebauer)
 
 
 ## License
