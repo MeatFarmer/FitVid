@@ -8,12 +8,12 @@
 FitVid is a full stack web app designed with the fitness enthusiast in mind. FitVid allows users to find a quick 5 minute Yoga video, or really get sweaty with a 30 minute high intensity CrossFit workout. Don't have time to workout? Log-in with your pre-existing Gmail credentials,  save the videos you like, and come back when it's convenient to a full collection of your favorite workout videos stored on the app.
 
 ## Technology Used
-Angular
-Express
-Node
-SQL
-Firebase
-Youtube API
+- Angular
+- Express
+- Node
+- SQL
+- Firebase
+- Youtube API
 
 
 ## Getting Started
